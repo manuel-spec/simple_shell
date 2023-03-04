@@ -1,49 +1,31 @@
-# 0x16. C - Simple Shell
+Simple Shell Team Project
 
-This project is an implementation of the shell created as the final project for the C code sprint at **ALX Africa**.
+Project was completed using
+C language
+Shell
+Betty linter
 
-## Table of contents :clipboard:
+General Requirement for project
+All files are compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
+All files ends with a new line
 
- - [Description]
- - [Installation]
- - [Usage]
- - [Example]
- - [Contributors]
- - [Acknowledgements]
-## Description :e-mail:
-This is a shell written in [C](https://en.wikipedia.org/wiki/C_(programming_language)).
-It is based on [the Thompson Shell](https://en.wikipedia.org/wiki/Thompson_shell).
+A README.md file at the root of the folder of the project is mandatory
+Used the Betty style to check using betty-style.pl and betty-doc.pl
+Shell should not have any memory leaks
+No more than 5 functions per file
+All header files should be include guarded
+Write a README with the description of the project
+Description
+hsh is a simple UNIX command language interpreter that reads commands from either a file or standard input and executes them.
 
-## Installation :wrench:
-Clone the below repository and compile the files into an executable using the GCC compiler.
-```
-https://github.com/MarufAbrar/simple_shell.git
-```
-##Environment :evergreen_tree::evergreen_tree:
-
-Our shell was built and tested on  Ubuntu 14.04 LTS.
-
-### Basic usage :bulb:
-- First, [fork this repository](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo).
-- Then [clone it to your local machine](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
-- Create an executable by running the following command:
-- `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
-- From there, type in the following command and press your enter button.
-- `./hsh`
-- Final step: ENJOY!
-
-## Example :computer:
-```
-ls -la
-```
-![screenshot of shell](https://user-images.githubusercontent.com/30075600/114757753-e50c2180-9d64-11eb-95ea-fb9bba776c8c.png)
-
-## Contributors :sunglasses::muscle:
-* [**Maruf Abrar**](https://github.com/MarufAbrar)
-* [**Emran Widad**](https://github.com/emranwidad)
-
-## Acknowledgments :pray:
-- Our fellow cohort members.
-- The creators of the C language.
-- Our software engineer-in-residence.
-- Betty Holberton.
+How hsh works
+Prints a prompt and waits for a command from the user
+Creates a child process in which the command is checked
+Checks for built-ins, aliases in the PATH, and local executable programs
+The child process is replaced by the command, which accepts arguments
+When the command is done, the program returns to the parent process and prints the prompt
+The program is ready to receive a new command
+To exit: press Ctrl-D or enter "exit" (with or without a status)
+Works also in non interactive mode
+Compilation
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
